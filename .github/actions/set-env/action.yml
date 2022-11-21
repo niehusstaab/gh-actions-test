@@ -3,6 +3,6 @@ name: set-env
 runs:
   using: composite
   steps:
-    - run: echo "DEVELOPER_DIR=/path/to/dev/dir/" >> $GITHUB_ENV
+    - run: echo "DEVELOPER_DIR=/Applications/Xcode_14.1.app/Contents/Developer" >> $GITHUB_ENV
       shell: bash
 

@@ -3,17 +3,19 @@ name: testing env
 on: workflow_dispatch
 
 env:
-  DEVELOPER_DIR: /Applications/Xcode_13.1/developer/
+  DEVELOPER_DIR: /Applications/Xcode_13.1.app/Contents/Developer
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
       - run: |-
           echo "dev dir is: $DEVELOPER_DIR"
+          xcodebuild -version
       - uses: ./.github/actions/set-env
       - run: |-
           echo "dev dir is: $DEVELOPER_DIR"
+          xcodebuild -version
 
