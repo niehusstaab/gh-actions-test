@@ -1,0 +1,14 @@
+name: testing env
+
+on: workflow_dispatch
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "dev dir is: $DEVELOPER_DIR"
+      - uses: ./.github/actions/set-env
+      - run: echo "dev dir is: $DEVELOPER_DIR"
+
