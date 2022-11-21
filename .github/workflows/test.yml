@@ -8,7 +8,9 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
-      - run: echo "dev dir is: $DEVELOPER_DIR"
+      - run: |-
+          echo "dev dir is: $DEVELOPER_DIR"
       - uses: ./.github/actions/set-env
-      - run: echo "dev dir is: $DEVELOPER_DIR"
+      - run: |-
+          echo "dev dir is: $DEVELOPER_DIR"
 
